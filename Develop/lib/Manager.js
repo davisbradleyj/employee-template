@@ -10,5 +10,4 @@ class Manager extends Employee {
         return this.officeNumber;
     }
 }
-
-    module.exports = Manager;
+module.exports = Manager;
