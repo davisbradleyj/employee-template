@@ -13,6 +13,92 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+// Manager
+function manager() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is your name?",
+            name: "name"
+        },
+        {
+            type: "input",
+            message: "What is your employee id number?",
+            name: "id"
+        },
+        {
+            type: "input",
+            message: "What is your email address?",
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "What is your office number?",
+            name: "office"
+        }
+    ])
+        .then(function )
+}
+
+// Engineer questions for Manager to fill out 
+function engineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is this engineer's name?",
+            name: "name"
+        },
+        {
+            type: "input",
+            message: "What is this engineer's id number?",
+            name: "id"
+        },
+        {
+            type: "input",
+            message: "What is this engineer's email address?",
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "What is this engineer's github username?",
+            name: "github"
+        }
+    ])
+        .then(function )
+}
+
+// intern questions for Manager to fill out 
+function intern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is this intern's name?",
+            name: "name"
+        },
+        {
+            type: "input",
+            message: "What is this intern's id number?",
+            name: "id"
+        },
+        {
+            type: "input",
+            message: "What is this intern's email address?",
+            name: "email"
+        },
+        {
+            type: "input",
+            message: "Where does this intern got to school?",
+            name: "school"
+        }
+    ])
+        .then(function )
+}
+
+manager();
+
+engineer();
+
+intern();
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
