@@ -15,7 +15,7 @@ The user will be prompted to build an engineering team, consisting of a manager,
   
   * [Contributing](#Contributing)
   
-  * [Installation](#Installation]
+  * [Installation](#Installation)
   
   * [Tests](#Tests)
   
