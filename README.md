@@ -7,34 +7,29 @@ The user will be prompted to build an engineering team, consisting of a manager,
 
 ## Table of Contents
 
-  * [Installation](#Installation)
-
   * [Technology](#Technology)
 
-  * [Usage](#Usage)
+  * [Summary](#Summary)
   
   * [License](#License)
   
   * [Contributing](#Contributing)
   
+  * [Installation](#Installation]
+  
   * [Tests](#Tests)
   
   * [Questions](#Questions)
 
-## Installation
-
-To install necessary dependencies, run the following command:
-
-npm install
-
 ## Technologies Used
 - HTML - used to create elements on the DOM
 - JavaScript - used to create the logic controlling the application
+- jQuery - library supplement to JavaScript controlling application logic
 - Node.js - runtime environment which executes the JS code
 - Git - version control system to track changes to source code
 - GitHub - hosts repository that can be deployed to GitHub Pages
 
-## Usage
+## Summary
 
 While given a good headstart with the development of this application, there was stil quite a bit of work to do in developing the js files controlling the individual classes to ensure all tests would pass.  Once those files were developed, numerous functions would need to be established within the app.js file.
 
@@ -48,8 +43,8 @@ One part of this project I would like to review in the future would be revising 
 <img src="https://github.com/davisbradleyj/employee-template/blob/master/Assets/rendered_html_demo.gif">
 <img src="https://github.com/davisbradleyj/employee-template/blob/master/Assets/team_build.png>
 
-  #### Code Snippet:
-  ```
+Code Snippet:
+```
 function buildTeam() {
     inquirer.prompt([
         {
@@ -84,15 +79,21 @@ function buildTeam() {
             console.log(err);
         })
 }
-  ```
+```
 
 ## License
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)]
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Contributing
 
 Jerome Chenette, Kerwin Hy, Mahi Gunasekaran, Corbin Brockbank, Nadine Bundschuh
+
+## Installation
+
+To install necessary dependencies, please run the following command:
+
+npm install
 
 ## Tests
 
