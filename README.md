@@ -88,7 +88,7 @@ function buildTeam() {
 
 ## License
 
-![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)]
 
 ## Contributing
 
