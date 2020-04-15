@@ -7,7 +7,6 @@ const fs = require("fs");
 const emp = []
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-const emp = []
 const render = require("./lib/htmlRenderer");
 
 
@@ -39,10 +38,50 @@ function manager() {
             name: "office"
         }
     ])
-    // add manager to an employee array
-        .then(function(response) {
+        // add manager to an employee array
+        .then(function (response) {
+            console.log(response)
             emp.push(new Manager(response.name, response.id, response.email, response.office))
+            buildTeam();
         });
+    // initialize function to build team
+
+}
+
+function buildTeam() {
+    inquirer.prompt([
+        {
+            type: "list",
+            message: "Who would you like to add to the team?",
+            name: "team",
+            choices: ["Engineer", "Intern", "Team is complete!"]
+        }
+    ])
+        // ask about team members
+        .then(function (response) {
+            if (response.team === "Engineer") {
+                console.log("create engineer")
+                // prompt the engineer question block
+                engineer();
+            } else if (response.team === "Intern") {
+                console.log("create intern")
+                // prompt the intern question block
+                intern();
+            } else {
+                // exit function and write team to html.
+                console.log("exiting, and writing team")
+                fs.writeFile(outputPath, render(emp), function (err) {
+                    if (err) {
+                        return
+                    } else
+                        console.log("Success!!")
+
+                })
+            }
+        })
+        .catch(function (err) {
+            console.log(err);
+        })
 }
 
 // Engineer questions for Manager to fill out 
@@ -70,9 +109,12 @@ function engineer() {
         }
     ])
         // add engineer to an employee array
-        .then(function(response) {
+        .then(function (response) {
             emp.push(new Engineer(response.name, response.id, response.email, response.github))
+            buildTeam();
         });
+    // send user back to buildTeam function to keep populating Engineering team
+
 }
 
 // intern questions for Manager to fill out 
@@ -100,22 +142,22 @@ function intern() {
         }
     ])
         // add intern to an employee array
-        .then(function(response) {
+        .then(function (response) {
             emp.push(new Intern(response.name, response.id, response.email, response.school))
+            buildTeam();
         });
+    // send user back to buildTeam function to keep populating Engineering team
+
 }
 
 manager();
-
-engineer();
-
-intern();
 
 
 
 // prompt a dropdown list to enter in a engineer or intern or exit
 // ------- Code --------
 // async function which waits for manager to complete profile setup
+// callbacks/promises
 // 
 
 // dropdown prompt query function
@@ -137,7 +179,7 @@ intern();
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
 // -------- Coding for render ----------
-//
+// could be called as part of the quit response
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
@@ -147,6 +189,8 @@ intern();
 // ----- code to write file/path ------
 // use the const "output" from starter code
 
+
+// 
 
 
 // HINT: each employee type (manager, engineer, or intern) has slightly different
