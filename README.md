@@ -40,7 +40,6 @@ The code snippet I have highlighted below is this logic, showing the code in pla
 One part of this project I would like to review in the future would be revising the styling: manager in their own row, engineers in their own row, and interns in their own row - all centered on the page.
 
 <img src="https://github.com/davisbradleyj/employee-template/blob/master/Assets/employee_template.gif">
-<img src="https://github.com/davisbradleyj/employee-template/blob/master/Assets/rendered_html_demo.gif">
 <img src="https://github.com/davisbradleyj/employee-template/blob/master/Assets/team_build.png>
 
 Code Snippet:
